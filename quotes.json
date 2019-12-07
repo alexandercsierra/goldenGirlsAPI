@@ -1,0 +1,25 @@
+
+
+{
+    "blanche": [],
+    "dorothy": 
+        [
+            {
+                "quote": "Go to sleep sweetheart, pray for brains.",
+                "season": 3,
+                "episode": "title"
+            },
+            {
+                "quote": "Put it in the Smithsonian, Blanche. Its got more miles on it than the Spirit of St. Louis!",
+                "season": 7,
+                "episode": "title"
+            },
+            {
+                "quote": "Put it in the Smithsonian, Blanche. Its got more miles on it than the Spirit of St. Louis!",
+                "season": 2,
+                "episode": "title"
+            }
+        ],
+    "rose": [],
+    "sophia": []
+}

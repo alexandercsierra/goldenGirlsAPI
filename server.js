@@ -1,17 +1,7 @@
-var quotes = [
-    {
-        who: "Dorothy Zbornak",
-        quote: "Go to sleep sweetheart, pray for brains.",
-        season: 3,
-        episode: "title",
-    },
-    {
-        who: "Dorothy Zbornak",
-        quote: "Put it in the Smithsonian, Blanche. Its got more miles on it than the Spirit of St. Louis!",
-        season: 7,
-        episode: "title",
-    }
-]
+var fs = require('fs');
+var data = fs.readFileSync('quotes.json');
+var quotes = JSON.parse(data);
+console.log(quotes);
 
 console.log("server is starting");
 
@@ -26,20 +16,8 @@ function listening(){
 
 app.use(express.static("public"));
 
-// app.get("/dorothy", sendQuote);
 
-// function sendQuote (request, response) {
-//     response.send("Some dorothy quote");
-// }
-
-// app.get("/search/:gg", searchGirl);
-
-// function searchGirl (request, response){
-//     let data = request.params;
-//     let gg = data.gg;
-//     response.send("You have searched for quotes from: " + gg);
-// }
-
+//add a new quote
 app.get("/add/:who/:quote/:season/:episode", addQuote);
 
 function addQuote (request, response){
@@ -56,17 +34,57 @@ function addQuote (request, response){
     quoteObj.episode = newEpisode;
 
 
-    quotes.push(quoteObj);
+    let arr = quotes[newWho];
+    arr.push(quoteObj);
 
-    reply = "Thanks for the quote!";
+    reply = {"status": "successful", "submission": newQuote};
+    console.log(reply);
 
     response.send(reply);
 
 }
 
-
+//show all quotes currently saved to database
 app.get("/all", sendAll);
 
 function sendAll (request, response){
     response.send(quotes);
 }
+
+//search for quotes by who said them
+app.get("/search/who/:name", searchWho);
+
+function searchWho (request, response) {
+    let name = request.params.name;
+    let reply;
+
+    // function test (arr, name){
+    //     let answer = [];
+    //     for (let i=0; i < arr.length; i++){
+    //         if (arr[i].who === name) {
+    //             answer.push(arr[i]);
+    //         }
+    //     } 
+    //     if (answer.length > 0){
+    //     reply = answer;
+    //     } else {
+    //     reply = {msg: "Sorry. No results found."}
+    //     }
+    // }
+
+    // test(quotes, name);
+
+    function test (){
+        if (quotes[name]){
+          reply = quotes[name];
+        } else {
+          reply = {"msg": "sorry no one by that name"};
+        }
+      }
+      
+      test();
+
+
+    response.send(reply);
+}
+
