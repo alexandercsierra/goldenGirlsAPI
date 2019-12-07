@@ -33,7 +33,7 @@ function submitQuote (){
             season: seasonNum,
             episode: episodeTitle
         }
-        $.post('/addquote', data, success);
+        $.post('addquote', data, success);
     
         function success(){
             msg.textContent = "Thank you for your submission"
@@ -49,7 +49,7 @@ function submitQuote (){
 
     
 
-$.getJSON('/all', gotData);
+$.getJSON('all', gotData);
 let allQuotes;
 function gotData(data){
     allQuotes = data;

@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 
 //show all quotes currently saved to database
-app.get("/all", sendAll);
+app.get("all", sendAll);
 
 function sendAll (request, response){
     response.send(quotes);
@@ -72,7 +72,7 @@ function sendAll (request, response){
 
 // }
 
-app.post('/addquote', addQuote);
+app.post('addquote', addQuote);
 
 function addQuote (request, response){
     let data = request.body;
@@ -112,7 +112,7 @@ function addQuote (request, response){
 
 
 //search for quotes by who said them
-app.get("/search/who/:name", searchWho);
+app.get("search/who/:name", searchWho);
 
 function searchWho (request, response) {
     let name = request.params.name;
