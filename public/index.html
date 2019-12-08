@@ -34,6 +34,29 @@
         </form>
         <div><h2 class="message"></h2></div>
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDrvNi4tniVQr-GyLvf1Qc9mcOYFt9ECAM",
+    authDomain: "golden-girls-quotes-api.firebaseapp.com",
+    databaseURL: "https://golden-girls-quotes-api.firebaseio.com",
+    projectId: "golden-girls-quotes-api",
+    storageBucket: "golden-girls-quotes-api.appspot.com",
+    messagingSenderId: "177461421019",
+    appId: "1:177461421019:web:13a9b51229a5171b27bdfe",
+    measurementId: "G-DNF95HK54K"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
