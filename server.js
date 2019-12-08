@@ -1,22 +1,24 @@
+require('dotenv').config();
+
 var fs = require('fs');
 var data = fs.readFileSync('quotes.json');
 var quotes = JSON.parse(data);
 var bodyParser = require('body-parser');
 
 
+let port = process.env.PORT;
 
-
-console.log(quotes);
+// port = 4000;
 
 console.log("server is starting");
 
 var express = require ('express');
 var app = express();
 
-var server = app.listen(3000, listening);
+var server = app.listen(port, listening);
 
 function listening(){
-    console.log('listening...');
+    console.log('listening on port: ' + port);
 }
 
 app.use(express.static("public"));
