@@ -2,12 +2,14 @@
     "blanche": 
         [
             {
+                "who": "Blanche Devereaux",
                 "quote": "Oh me oh my.",
                 "season": 2,
                 "episode": "Title"
             },
 
             {
+                "who": "Blanche Devereaux",
                 "quote": "SLUT",
                 "season": 3,
                 "episode": "Another Title"
@@ -15,11 +17,13 @@
         ],
     "dorothy": [
         {
+            "who": "Dorothy Zbornak",
             "quote": "Go to sleep sweetheart, pray for brains.",
             "season": 1,
             "episode": "Break-In"
         },
         {
+            "who": "Dorothy Zbornak",
             "quote": "ROSE",
             "season": 5,
             "episode": "Some Title"

@@ -4,6 +4,7 @@ let random = document.querySelector(".random");
 let submit = document.querySelector(".submit");
 let all = document.querySelector(".all");
 let back = document.querySelector(".back");
+let cardDiv = document.querySelector(".cardDiv");
 
 //search form buttons
 let submitPerson = document.querySelector(".submitPerson");
@@ -18,6 +19,8 @@ let randomDorothy = document.querySelector(".randomDorothy");
 let randomRose = document.querySelector(".randomRose");
 let randomSophia = document.querySelector(".randomSophia");
 let randomAll = document.querySelector(".randomAll");
+let randomOk = document.querySelector(".randomOk");
+let clear = document.querySelector(".clear");
 
 
 //search values
@@ -53,12 +56,19 @@ random.addEventListener("click", e =>{
 });
 
 
+
+
+//random button functionality
 randomBlanche.addEventListener("click", e=>{
     $.getJSON('/random/blanche', gotData);
     function gotData (data){
         let index = Math.floor(Math.random() * data.length);
         // console.log(data[index]);
         currentObj = data[index];
+        randomDorothy.disabled = true;
+        randomRose.disabled = true;
+        randomSophia.disabled=true;
+        randomAll.disabled=true;
     }
 })
 
@@ -68,6 +78,10 @@ randomDorothy.addEventListener("click", e=>{
         let index = Math.floor(Math.random() * data.length);
         // console.log(data[index]);
         currentObj = data[index];
+        randomBlanche.disabled = true;
+        randomRose.disabled = true;
+        randomSophia.disabled=true;
+        randomAll.disabled=true;
     }
 })
 
@@ -77,6 +91,10 @@ randomRose.addEventListener("click", e=>{
         let index = Math.floor(Math.random() * data.length);
         // console.log(data[index]);
         currentObj = data[index];
+        randomBlanche.disabled = true;
+        randomDorothy.disabled = true;
+        randomSophia.disabled=true;
+        randomAll.disabled=true;
     }
 })
 
@@ -86,8 +104,53 @@ randomSophia.addEventListener("click", e=>{
         let index = Math.floor(Math.random() * data.length);
         // console.log(data[index]);
         currentObj = data[index];
+        randomBlanche.disabled = true;
+        randomRose.disabled = true;
+        randomDorothy.disabled=true;
+        randomAll.disabled=true;
     }
 })
+
+randomAll.addEventListener("click", e=>{
+    $.getJSON('/random/all', gotData);
+    function gotData (data){
+        randomBlanche.disabled = true;
+        randomRose.disabled = true;
+        randomSophia.disabled=true;
+        randomDorothy.disabled=true;
+        let randomP = Math.floor(Math.random()* 4);
+        let keys = Object.keys(data);
+        let girl = keys[randomP];
+        let index = Math.floor(Math.random() * data[girl].length);
+        // console.log(data[index]);
+        currentObj = data[girl][index];
+        // console.log(index);
+    }
+})
+
+clear.addEventListener("click", e=>{
+    randomDorothy.disabled=false;
+    randomBlanche.disabled=false;
+    randomRose.disabled=false;
+    randomSophia.disabled=false;
+    randomAll.disabled=false;
+})
+
+randomOk.addEventListener("click", e=>{
+    randomDorothy.disabled=false;
+    randomBlanche.disabled=false;
+    randomRose.disabled=false;
+    randomSophia.disabled=false;
+    randomAll.disabled=false;
+
+
+    console.log(currentObj.who, currentObj.quote, currentObj.season, currentObj.episode);
+    appendCard();
+})
+
+
+
+
 //click to be redirected to /all to see all the quotes
 all.addEventListener("click", e=>{
     e.preventDefault();
@@ -116,12 +179,68 @@ back.addEventListener("click", e =>{
     search1.classList.remove("hide");
     random.classList.remove("hide");
     all.classList.remove("hide");
-    console.log(currentObj);
 })
 
 
+//card creator
 
+function createCard(obj){
+    let card = document.createElement("div");
+    card.classList.add("card");
 
+    let name = document.createElement("h3");
+    name.classList.add("name");
+    name.textContent = obj.who;
+
+    let quote = document.createElement("p");
+    quote.classList.add("quote");
+    quote.textContent = '"' + obj.quote + '"';
+
+    let season = document.createElement("p");
+    season.classList.add("season");
+    season.textContent = "Season: " + obj.season;
+
+    let episode = document.createElement("p");
+    episode.classList.add("episode");
+    episode.textContent = "Episode: " + obj.episode;
+
+    let textDiv = document.createElement("div");
+    textDiv.classList.add("textDiv");
+
+    let quoteDiv = document.createElement("div");
+    quoteDiv.classList.add("quoteDiv");
+
+    let imgDiv = document.createElement("div");
+    imgDiv.classList.add("imgDiv");
+
+    let img = document.createElement("img");
+
+    let leftDiv = document.createElement("div");
+    leftDiv.classList.add("leftDiv");
+
+    if (obj.who === "Dorothy Zbornak"){
+        img.src = "https://i.pinimg.com/originals/66/65/a1/6665a1072dd19d3075812c903235c01f.jpg";
+    } else {
+        img.src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/the-golden-girls-house-1564425239.jpg?crop=0.598xw:0.883xh;0.225xw,0.0102xh&resize=480:*";
+    }
+
+    imgDiv.appendChild(img);
+    textDiv.appendChild(name);
+    textDiv.appendChild(season);
+    textDiv.appendChild(episode);
+    quoteDiv.appendChild(quote);
+    leftDiv.appendChild(textDiv);
+    leftDiv.appendChild(quoteDiv);
+    card.appendChild(leftDiv);
+    card.appendChild(imgDiv);
+
+    return card;
+}
+
+function appendCard(){
+    let newCard = createCard(currentObj);
+    cardDiv.appendChild(newCard);
+}
 
 
 

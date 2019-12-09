@@ -78,13 +78,13 @@ app.post('/addquote', addQuote);
 
 function addQuote (request, response){
     let data = request.body;
-    // let newWho = data.who;
+    let newWho = data.who;
     let newQuote = data.quote;
     let newSeason = data.season;
     let newEpisode = data.episode;
 
     let quoteObj = {}
-    // quoteObj.who = newWho;
+    quoteObj.who = newWho;
     quoteObj.quote = newQuote;
     quoteObj.season = Number(newSeason);
     quoteObj.episode = newEpisode;
@@ -145,7 +145,7 @@ function randomWho (request, response) {
         if (quotes[name]){
           reply = quotes[name];
         } else {
-          reply = {"msg": "sorry no one by that name"};
+          reply = quotes;
         }
       }
       
