@@ -1,8 +1,58 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .container {
@@ -13,10 +63,11 @@
 
 h1 {
     margin: 4%;
+    font-size: 3rem;
 }
 
 form {
-    margin: 0 auto;
+    margin: 4% auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -27,9 +78,15 @@ form {
     display: none;
 }
 
+
+
+
+
+/* card styles */
 .card {
     max-width: 700px;
     display: flex;
+    justify-content: space-between;
     margin: 8% auto;
     padding: 4%;
     background: #c9c9b7;
@@ -42,7 +99,8 @@ form {
 
 .quote{
     display: flex;
-    font-size: 2rem;
+    text-align: left;
+    font-size: 1.7rem;
     /* margin: 6% 0 6% 0; */
     padding: 4%;
 }
@@ -76,6 +134,59 @@ form {
     width: 100%;
 }
 
-.textDiv{
-    /* width: 50%; */
+
+
+
+
+/* button and form styles */
+
+button {
+    padding: 1% 2%;
+    border: none;
+    /* border-radius: 5px; */
+    background: #75754a;
+    color: white;
 }
+
+button:disabled{
+    background: white;
+    color: #75754a;
+    border: 1px solid #75754a;
+}
+
+.randomBtns div {
+    margin: 4%;
+}
+
+
+.searchForm {
+    margin-bottom: 5%;
+}
+
+.searchWho {
+    display: flex;
+    /* flex-direction: row; */
+    width: 100%;
+    /* height: 400px; */
+}
+
+.searchQuote {
+    display: flex;
+    /* flex-direction: row; */
+    width: 100%;
+    /* height: 400px; */
+}
+
+.searchSeason {
+    display: flex;
+    /* flex-direction: row; */
+    width: 100%;
+    /* height: 400px; */
+}
+.searchEpisode {
+    display: flex;
+    /* flex-direction: row; */
+    width: 100%;
+    /* height: 400px; */
+}
+

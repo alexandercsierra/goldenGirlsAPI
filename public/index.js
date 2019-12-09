@@ -182,6 +182,26 @@ back.addEventListener("click", e =>{
 })
 
 
+//submit search buttons
+
+submitPerson.addEventListener("click", e=>{
+    e.preventDefault();
+    $.getJSON('/search/who/'+ person.value, gotData);
+    function gotData (data){
+        console.log(data);
+        data.map(obj =>{
+            currentObj = obj;
+            appendCard();
+        })
+    }
+
+})
+
+
+
+
+
+
 //card creator
 
 function createCard(obj){

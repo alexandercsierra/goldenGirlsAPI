@@ -24,8 +24,14 @@
         },
         {
             "who": "Dorothy Zbornak",
-            "quote": "ROSE",
-            "season": 5,
+            "quote": "Yes Rose, you are the smartest woman in the world. BURGER WORLD!",
+            "season": 2,
+            "episode": "Some Title"
+        },
+        {
+            "who": "Dorothy Zbornak",
+            "quote": "Why don't I just wear a sign that says 'too ugly to live'?",
+            "season": 2,
             "episode": "Some Title"
         }
     ],

@@ -132,6 +132,25 @@ function searchWho (request, response) {
     response.send(reply);
 }
 
+// //search for all quotes by who said them
+// app.get("/search/season/:num", searchSeason);
+
+// function searchSeason (request, response) {
+//     let num = request.params.num;
+//     let reply;
+
+//     function test (){
+//         if (quotes[num]){
+//           reply = quotes[name];
+//         } else {
+//           reply = {"msg": "sorry no one by that name"};
+//         }
+//       }
+      
+//     test();
+//     response.send(reply);
+// }
+
 
 
 
