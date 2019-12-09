@@ -1,11 +1,28 @@
 {
-    "blanche": [
-    ],
+    "blanche": 
+        [
+            {
+                "quote": "Oh me oh my.",
+                "season": 2,
+                "episode": "Title"
+            },
+
+            {
+                "quote": "SLUT",
+                "season": 3,
+                "episode": "Another Title"
+            }
+        ],
     "dorothy": [
         {
             "quote": "Go to sleep sweetheart, pray for brains.",
-            "season": 3,
-            "episode": "title"
+            "season": 1,
+            "episode": "Break-In"
+        },
+        {
+            "quote": "ROSE",
+            "season": 5,
+            "episode": "Some Title"
         }
     ],
     "rose": [

@@ -10,16 +10,21 @@
 <body>
     <div class="container">
         <h1>Golden Girls API</h1>
-        <form action="">
-            <select id="person" required>
+        <div>
+            <button class="search">SEARCH</button>
+            <button class="random">RANDOM</button>
+            <button class="all">SEE ALL</button>
+        </div>
+        <form action="" class="addForm hide">
+            <select id="addPerson" required>
                 <option value="" selected>Choose a Golden Girl</option>
                 <option value="blanche">Blanche Deveroux</option>
                 <option value="dorothy">Dorothy Zbornak</option>
                 <option value="rose">Rose Nyland</option>
                 <option value="sophia">Sophia Petrillo</option>
             </select>
-            <textarea id="quote" required></textarea>
-            <select name="" id="season" required>
+            <textarea id="addQuote" required></textarea>
+            <select name="" id="addSeason" required>
                 <option value = "" selected>Season</option>
                 <option>1</option>
                 <option>2</option>
@@ -29,10 +34,51 @@
                 <option>6</option>
                 <option>7</option>
             </select>
-            <input type="text" id="episode" required>
+            <input type="text" id="addEpisode" required>
             <button class="submit">SUBMIT</button>
         </form>
+        <div class="searchForm hide">
+            <form action="" class="searchWho">
+                <select id="person" required>
+                    <option value="" selected>Choose a Golden Girl</option>
+                    <option value="blanche">Blanche Deveroux</option>
+                    <option value="dorothy">Dorothy Zbornak</option>
+                    <option value="rose">Rose Nyland</option>
+                    <option value="sophia">Sophia Petrillo</option>
+                </select>
+                <button class="submitPerson">SEARCH</button>
+            </form>
+            <form action="" class="searchQuote">
+                <textarea id="quote" required></textarea>
+                <button class="submitQuote">SEARCH</button>
+            </form>
+            <form action="" class="searchSeason">
+                <select name="" id="season" required>
+                    <option value = "" selected>Season</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                </select>
+                <button class="submitSeason">SEARCH</button>
+            </form>
+            <form action="" class="searchEpisode">
+                <input type="text" id="episode" required placeholder="episode title">
+            <button class="submitEpisode">SEARCH</button>
+            </form>
+        </div>
+        <div class="randomBtns hide">
+            <button class="randomBlanche">Blanche</button>
+            <button class="randomDorothy">Dorothy</button>
+            <button class="randomRose">Rose</button>
+            <button class="randomSophia">Sophia</button>
+            <button class="randomAll">All</button>
+        </div>
         <div><h2 class="message"></h2></div>
+        <div><button class="back hide">Back</button></div>
     </div>
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"

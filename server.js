@@ -78,13 +78,13 @@ app.post('/addquote', addQuote);
 
 function addQuote (request, response){
     let data = request.body;
-    let newWho = data.who;
+    // let newWho = data.who;
     let newQuote = data.quote;
     let newSeason = data.season;
     let newEpisode = data.episode;
 
     let quoteObj = {}
-    quoteObj.who = newWho;
+    // quoteObj.who = newWho;
     quoteObj.quote = newQuote;
     quoteObj.season = Number(newSeason);
     quoteObj.episode = newEpisode;
@@ -113,10 +113,31 @@ function addQuote (request, response){
 
 
 
-//search for quotes by who said them
+//search for all quotes by who said them
 app.get("/search/who/:name", searchWho);
 
 function searchWho (request, response) {
+    let name = request.params.name;
+    let reply;
+
+    function test (){
+        if (quotes[name]){
+          reply = quotes[name];
+        } else {
+          reply = {"msg": "sorry no one by that name"};
+        }
+      }
+      
+    test();
+    response.send(reply);
+}
+
+
+
+
+app.get("/random/:name", randomWho);
+
+function randomWho (request, response) {
     let name = request.params.name;
     let reply;
 
