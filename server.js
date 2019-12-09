@@ -120,15 +120,19 @@ function searchWho (request, response) {
     let name = request.params.name;
     let reply;
 
+    
+
     function test (){
         if (quotes[name]){
           reply = quotes[name];
+
         } else {
           reply = {"msg": "sorry no one by that name"};
         }
       }
       
     test();
+    console.log(reply);
     response.send(reply);
 }
 
@@ -161,14 +165,19 @@ function randomWho (request, response) {
     let reply;
 
     function test (){
-        if (quotes[name]){
-          reply = quotes[name];
-        } else {
-          reply = quotes;
-        }
+      if (quotes[name]){
+        let index = Math.floor(Math.random() * quotes[name].length);
+        reply = quotes[name][index];
+    
+      } else {
+        reply = {"msg": "sorry no one by that name"};
       }
+    }
       
     test();
     response.send(reply);
 }
+
+
+
 

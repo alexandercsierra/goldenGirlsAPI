@@ -3,16 +3,9 @@
         [
             {
                 "who": "Blanche Devereaux",
-                "quote": "Oh me oh my.",
-                "season": 2,
-                "episode": "Title"
-            },
-
-            {
-                "who": "Blanche Devereaux",
-                "quote": "SLUT",
-                "season": 3,
-                "episode": "Another Title"
+                "quote": "I do declare! Your sweet words could charm the morning dew right off the honeysuckle.",
+                "season": 0,
+                "episode": "Some Title"
             }
         ],
     "dorothy": [
