@@ -25,13 +25,31 @@
         {
             "who": "Dorothy Zbornak",
             "quote": "Yes Rose, you are the smartest woman in the world. BURGER WORLD!",
-            "season": 2,
+            "season": 0,
             "episode": "Some Title"
         },
         {
             "who": "Dorothy Zbornak",
             "quote": "Why don't I just wear a sign that says 'too ugly to live'?",
-            "season": 2,
+            "season": 0,
+            "episode": "Some Title"
+        },
+        {
+            "who": "Dorothy Zbornak",
+            "quote": "I'm either going to get some ice cream or commit a felony. I'll decide in the car",
+            "season": 0,
+            "episode": "Some Title"
+        },
+        {
+            "who": "Dorothy Zbornak",
+            "quote": "We agreed no talking. It shakes the plane.",
+            "season": 0,
+            "episode": "Some Title"
+        },
+        {
+            "who": "Dorothy Zbornak",
+            "quote": "Rose, we can't kill you here because there are cameras",
+            "season": 0,
             "episode": "Some Title"
         }
     ],
