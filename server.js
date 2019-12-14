@@ -4,6 +4,7 @@ var fs = require('fs');
 var data = fs.readFileSync('quotes.json');
 var quotes = JSON.parse(data);
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 
 let port = process.env.PORT;
@@ -14,6 +15,8 @@ console.log("server is starting");
 
 var express = require ('express');
 var app = express();
+
+app.use(cors())
 
 var server = app.listen(port, listening);
 
