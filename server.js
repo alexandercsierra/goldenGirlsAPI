@@ -165,16 +165,26 @@ function randomWho (request, response) {
     let reply;
 
     function test (){
-      if (quotes[name]){
+      if (name === "blanche" || name === "dorothy" || name === "rose" || name === "sophia"){
         let index = Math.floor(Math.random() * quotes[name].length);
         reply = quotes[name][index];
+        console.log("hello from names");
     
-      } else {
-        reply = {"msg": "sorry no one by that name"};
+      } else if (name === "all"){
+        let randomP = Math.floor(Math.random()* 4);
+        let keys = Object.keys(quotes);
+        let girl = keys[randomP];
+        let daQuotes = quotes[girl];
+        let indexAll = Math.floor(Math.random() * daQuotes.length);
+        reply = daQuotes[indexAll];
+
+        
       }
     }
+
       
     test();
+    console.log(reply);
     response.send(reply);
 }
 

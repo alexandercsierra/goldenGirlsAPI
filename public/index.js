@@ -1,3 +1,5 @@
+// import axios from "axios";
+
 //buttons
 let search1 = document.querySelector(".search");
 let random = document.querySelector(".random");
@@ -62,9 +64,9 @@ random.addEventListener("click", e =>{
 randomBlanche.addEventListener("click", e=>{
     $.getJSON('/random/blanche', gotData);
     function gotData (data){
-        let index = Math.floor(Math.random() * data.length);
+        // let index = Math.floor(Math.random() * data.length);
         // console.log(data[index]);
-        currentObj = data[index];
+        currentObj = data;
         randomDorothy.disabled = true;
         randomRose.disabled = true;
         randomSophia.disabled=true;
@@ -75,9 +77,11 @@ randomBlanche.addEventListener("click", e=>{
 randomDorothy.addEventListener("click", e=>{
     $.getJSON('/random/dorothy', gotData);
     function gotData (data){
-        let index = Math.floor(Math.random() * data.length);
+        // let index = Math.floor(Math.random() * data.length);
         // console.log(data[index]);
-        currentObj = data[index];
+        // currentObj = data[index];
+        currentObj = data;
+        console.log(currentObj);
         randomBlanche.disabled = true;
         randomRose.disabled = true;
         randomSophia.disabled=true;
@@ -88,9 +92,9 @@ randomDorothy.addEventListener("click", e=>{
 randomRose.addEventListener("click", e=>{
     $.getJSON('/random/rose', gotData);
     function gotData (data){
-        let index = Math.floor(Math.random() * data.length);
+        // let index = Math.floor(Math.random() * data.length);
         // console.log(data[index]);
-        currentObj = data[index];
+        currentObj = data;
         randomBlanche.disabled = true;
         randomDorothy.disabled = true;
         randomSophia.disabled=true;
@@ -103,7 +107,7 @@ randomSophia.addEventListener("click", e=>{
     function gotData (data){
         let index = Math.floor(Math.random() * data.length);
         // console.log(data[index]);
-        currentObj = data[index];
+        currentObj = data;
         randomBlanche.disabled = true;
         randomRose.disabled = true;
         randomDorothy.disabled=true;
@@ -118,13 +122,8 @@ randomAll.addEventListener("click", e=>{
         randomRose.disabled = true;
         randomSophia.disabled=true;
         randomDorothy.disabled=true;
-        let randomP = Math.floor(Math.random()* 4);
-        let keys = Object.keys(data);
-        let girl = keys[randomP];
-        let index = Math.floor(Math.random() * data[girl].length);
-        // console.log(data[index]);
-        currentObj = data[girl][index];
-        // console.log(index);
+        currentObj = data;
+
     }
 })
 
@@ -143,8 +142,8 @@ randomOk.addEventListener("click", e=>{
     randomSophia.disabled=false;
     randomAll.disabled=false;
 
-
-    console.log(currentObj.who, currentObj.quote, currentObj.season, currentObj.episode);
+    console.log(currentObj);
+    // console.log(currentObj.who, currentObj.quote, currentObj.season, currentObj.episode);
     appendCard();
 })
 
@@ -164,6 +163,11 @@ all.addEventListener("click", e=>{
         link.href = "/all";
         msg.appendChild(link);
     }
+    // axios.get("/random/all")
+    //     .then(res => {
+    //         console.log(res);
+    //     })
+    //     .catch(err => console.log(err))
 
 })
 
